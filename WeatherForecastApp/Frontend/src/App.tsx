@@ -4,14 +4,6 @@ import useStore from './store/useStore';
 import { ForecastList } from './ForecastList';
 import { SearchBar } from './SearchBar';
 
-interface Forecast {
-  date: string;
-  temperature: number;
-  temperatureUnit: string;
-  shortForecast: string;
-  icon: string;
-}
-
 const App: FC = () => {
   const address = useStore(s => s.address);
   const { forecast, loading, error, fetchForecast } = useForecast();
@@ -40,9 +32,3 @@ const App: FC = () => {
 }
 
 export default App;
-
-export interface SearchBarProps {
-  handleRefresh: () => void;
-}
-
-
